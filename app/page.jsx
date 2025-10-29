@@ -1,11 +1,7 @@
-import {
-  irvin,
-  caslon,
-  caslonItalic,
-  graphik,
-  neutrafaceNewYorker,
-} from "./ui/fonts/fonts"
 import Image from "next/image"
+
+// Import components
+import Intro from "@/components/Intro"
 
 export default function Page() {
   return (
@@ -16,15 +12,10 @@ export default function Page() {
           width={175}
           height={39.81}
           alt="The New Yorker Logo"
+          style={{ width: "174px", height: "auto" }}
         />
       </div>
-      <p className={`${irvin.className}`}>Irvin</p>
-      <p className={`${caslon.className}`}>Caslon</p>
-      <p className={`${caslonItalic.className}`}>Caslon Italic</p>
-      <p className={`${graphik.className}`}>Graphik</p>
-      <p className={`${neutrafaceNewYorker.className}`}>
-        Neutraface New Yorker
-      </p>
+      <Intro />
     </div>
   )
 }

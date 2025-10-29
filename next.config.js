@@ -3,7 +3,7 @@ const nextConfig = {
   output: "export",
   distDir: "dist",
   images: { unoptimized: true },
-  assetPrefix: "./",
+  //   assetPrefix: "./",
 }
 
 module.exports = nextConfig
