@@ -9,13 +9,14 @@ import {
 import post from "@/lib/post"
 
 import ShareIcon from "@/components/ShareIcon"
+import Spotlights from "@/components/Spotlights"
+import Clouds from "@/components/Clouds"
 import Stars from "@/components/Stars"
-import Spotlights from "./Spotlights"
 
 export default function Opener() {
   return (
     <div
-      className="opener-wrapper mb-2 flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-28 pb-48 md:pt-40"
+      className="opener-wrapper mb-2 flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 pb-32 md:pt-40 md:pb-48"
       style={{
         backgroundImage: `url("./images/background.png")`,
       }}
@@ -95,12 +96,14 @@ export default function Opener() {
         </div>
       </div>
       <Spotlights />
+      <Clouds />
       <Stars />
       {/* Gradient Overlay for page transition */}
       <div
         className="absolute inset-0 h-full w-full"
         style={{
-          background: "linear-gradient(transparent, #000000)",
+          background:
+            "linear-gradient(#000000 0%, transparent 20%, transparent 80%, #000000)",
         }}
       ></div>
       {/* </div> */}

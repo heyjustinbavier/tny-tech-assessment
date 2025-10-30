@@ -125,7 +125,7 @@ export default function Stars() {
   }, [])
 
   return (
-    <div className="absolute h-full">
+    <div className="absolute inset-0 top-0 h-full w-full overflow-hidden">
       <canvas ref={canvasRef} className="h-full w-full" />
     </div>
   )

@@ -1,0 +1,108 @@
+const cloudDictionary = [
+  {
+    imgSrc: "cloud_01.webp",
+    height: 188,
+    width: 800,
+    mobileEnabled: false,
+    desktopEnabled: false,
+    offset: [
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+    ],
+    animationOffset: 0,
+  },
+  {
+    imgSrc: "cloud_02.webp",
+    height: 296,
+    width: 1000,
+    mobileEnabled: true,
+    desktopEnabled: false,
+    offset: [
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+      { x: -25, y: 68, scale: 0.75 },
+    ],
+    animationOffset: 4,
+  },
+  {
+    imgSrc: "cloud_03.webp",
+    height: 269,
+    width: 600,
+    mobileEnabled: true,
+    desktopEnabled: false,
+    offset: [
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+      { x: 25, y: 85, scale: 0.4 },
+    ],
+    animationOffset: 3,
+  },
+  {
+    imgSrc: "cloud_04.webp",
+    height: 270,
+    width: 800,
+    mobileEnabled: false,
+    desktopEnabled: false,
+    offset: [
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+    ],
+    animationOffset: 0,
+  },
+  {
+    imgSrc: "cloud_05.webp",
+    height: 312,
+    width: 800,
+    mobileEnabled: false,
+    desktopEnabled: false,
+    offset: [
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+      { x: 0, y: 0, scale: 1 },
+    ],
+    animationOffset: 0,
+  },
+  {
+    imgSrc: "cloud_06.webp",
+    height: 327,
+    width: 500,
+    mobileEnabled: true,
+    desktopEnabled: true,
+    offset: [
+      { x: 55, y: 15, scale: 0.8 },
+      { x: 56, y: 15, scale: 0.7 },
+      { x: 35, y: 4, scale: 0.3 },
+    ],
+    animationOffset: 0,
+  },
+  {
+    imgSrc: "cloud_07.webp",
+    height: 279,
+    width: 600,
+    mobileEnabled: true,
+    desktopEnabled: true,
+    offset: [
+      { x: 53, y: 77, scale: 1 },
+      { x: 40, y: 75, scale: 0.9 },
+      { x: 23, y: 45, scale: 0.6 },
+    ],
+    animationOffset: 2,
+  },
+  {
+    imgSrc: "cloud_08.webp",
+    height: 505,
+    width: 800,
+    mobileEnabled: true,
+    desktopEnabled: true,
+    offset: [
+      { x: 12, y: 20, scale: 1.2 },
+      { x: -1, y: 20, scale: 1.0 },
+      { x: -17, y: 5, scale: 0.85 },
+    ],
+    animationOffset: 1,
+  },
+]
+
+export { cloudDictionary }

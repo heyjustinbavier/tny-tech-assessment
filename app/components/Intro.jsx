@@ -10,8 +10,8 @@ export default function Intro() {
   }
 
   return (
-    <div className="m-auto flex w-full items-center justify-center">
-      <div className="mx-4 mb-24 flex max-w-[968px] flex-col gap-y-10 p-8 text-white md:border md:p-20">
+    <div className="z-1 m-auto flex w-full items-center justify-center">
+      <div className="mx-4 mb-24 flex max-w-[968px] flex-col gap-y-10 px-8 text-white md:border md:p-20">
         <p
           className={`${irvin.className} text-center text-[14px] leading-3.5 tracking-[1px]`}
         >

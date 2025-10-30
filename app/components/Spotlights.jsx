@@ -37,9 +37,9 @@ export default function Spotlights() {
         setMaxRotation(47)
       } else {
         // Mobile
-        setHoriztonalOffset(25)
-        setVerticalOffset(20)
-        setMaxRotation(20)
+        setHoriztonalOffset(35)
+        setVerticalOffset(42)
+        setMaxRotation(22)
       }
     }
     window.addEventListener("resize", setRotationSettings)
