@@ -12,35 +12,35 @@ export default function Spotlights() {
   const rightSpotlight = useRef(null)
   const [rotateStart, setRotateStart] = useState(-10)
   const [rotateDur, setRotateDur] = useState(3)
-  const [horizontalOffset, setHoriztonalOffset] = useState(30)
+  const [horizontalOffset, setHorizontalOffset] = useState(30)
   const [verticalOffset, setVerticalOffset] = useState(18)
-  const [maxRotation, setMaxRotation] = useState(50)
+  const [maxRotation, setMaxRotation] = useState(55)
 
   useEffect(() => {
     const setRotationSettings = () => {
       if (window.innerWidth >= 1440) {
         // Large desktop
-        setHoriztonalOffset(24)
-        setVerticalOffset(28)
+        setHorizontalOffset(24)
+        setVerticalOffset(38)
         setMaxRotation(55)
       } else if (window.innerWidth >= 1200 && window.innerWidth < 1440) {
         // Med-large desktop
-        setHoriztonalOffset(47)
+        setHorizontalOffset(27)
         setVerticalOffset(32)
         setMaxRotation(50)
       } else if (window.innerWidth >= 1024 && window.innerWidth < 1200) {
         // Med-small desktop
-        setHoriztonalOffset(60)
+        setHorizontalOffset(40)
         setVerticalOffset(36)
         setMaxRotation(50)
       } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
         // Tablet
-        setHoriztonalOffset(62)
+        setHorizontalOffset(42)
         setVerticalOffset(30)
         setMaxRotation(47)
       } else {
         // Mobile
-        setHoriztonalOffset(35)
+        setHorizontalOffset(35)
         setVerticalOffset(42)
         setMaxRotation(22)
       }
@@ -107,7 +107,7 @@ export default function Spotlights() {
     //     repeat: -1,
     //   },
     // )
-  })
+  }, [maxRotation])
 
   return (
     <div

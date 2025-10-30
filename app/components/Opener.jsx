@@ -16,13 +16,13 @@ import Stars from "@/components/Stars"
 export default function Opener() {
   return (
     <div
-      className="opener-wrapper mb-2 flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 pb-32 md:pt-40 md:pb-48"
+      className="opener-wrapper relative mb-34 flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 md:mb-48 md:pt-40"
       style={{
         backgroundImage: `url("./images/background.png")`,
       }}
     >
       <div
-        className={`z-1 flex max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
+        className={`z-1 flex h-full max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
       >
         {/* Rubric */}
         <p

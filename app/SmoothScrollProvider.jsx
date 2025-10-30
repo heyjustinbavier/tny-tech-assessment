@@ -12,6 +12,7 @@ export default function SmoothScrollProvider({ children }) {
     const lenis = new Lenis({
       lerp: 0.05,
       wheelMultiplier: 1,
+      touchMultiplier: 1,
     })
     lenis.on("scroll", ScrollTrigger.update)
     gsap.ticker.add((time) => {
