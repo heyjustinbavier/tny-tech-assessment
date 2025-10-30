@@ -72,31 +72,7 @@ export default function Spotlights() {
       },
     )
   })
-  //   useEffect(() => {
-  // Set canvas size to stars image
-  //     const setRotationSettings = () => {
-  //       if (window.innerWidth >= 1024) {
-  //         // Desktop
-  //         setRotateDur(3)
-  //         setRotateStart(-10)
-  //         setRotateEnd(45)
-  //       } else if (window.innerWidth > 768 && window.innerWidth < 1024) {
-  //         // Tablet
-  //         setRotateDur(3)
-  //         setRotateStart(-10)
-  //         setRotateEnd(40)
-  //       } else {
-  //         // Mobile
-  //         setRotateDur(3)
-  //         setRotateStart(-10)
-  //         setRotateEnd(35)
-  //       }
-  //     }
-  //     window.addEventListener("resize", setRotationSettings)
-  //     setRotationSettings()
 
-  //
-  //   })
   return (
     <div className="absolute inset-0 top-0 h-full w-full overflow-hidden">
       <Image
