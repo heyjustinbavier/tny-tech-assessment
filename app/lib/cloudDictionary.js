@@ -97,7 +97,7 @@ const cloudDictionary = [
     mobileEnabled: true,
     desktopEnabled: true,
     offset: [
-      { x: 12, y: 20, scale: 1.2 },
+      { x: 6, y: 20, scale: 1.2 },
       { x: -1, y: 20, scale: 1.0 },
       { x: -17, y: 5, scale: 0.85 },
     ],

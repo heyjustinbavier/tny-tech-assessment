@@ -1,5 +1,7 @@
 import "@/globals.css"
 
+import SmoothScrollProvider from "./SmoothScrollProvider"
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -13,7 +15,9 @@ export default function RootLayout({ children }) {
         name="viewport"
         content="width=device-width,initial-scale=1, viewport-fit=cover"
       />
-      <body>{children}</body>
+      <body>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+      </body>
     </html>
   )
 }

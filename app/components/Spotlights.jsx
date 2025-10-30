@@ -1,10 +1,13 @@
 "use client"
 import { useRef, useEffect, useState } from "react"
 import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Image from "next/image"
-import { clsx } from "clsx"
+
+gsap.registerPlugin(ScrollTrigger)
 
 export default function Spotlights() {
+  const parallaxRef = useRef()
   const leftSpotlight = useRef(null)
   const rightSpotlight = useRef(null)
   const [rotateStart, setRotateStart] = useState(-10)
@@ -18,8 +21,8 @@ export default function Spotlights() {
       if (window.innerWidth >= 1440) {
         // Large desktop
         setHoriztonalOffset(24)
-        setVerticalOffset(23)
-        setMaxRotation(50)
+        setVerticalOffset(28)
+        setMaxRotation(55)
       } else if (window.innerWidth >= 1200 && window.innerWidth < 1440) {
         // Med-large desktop
         setHoriztonalOffset(47)
@@ -44,37 +47,73 @@ export default function Spotlights() {
     }
     window.addEventListener("resize", setRotationSettings)
     setRotationSettings()
-    // Rotate animation for left spotlight
+    // Scroll based rotate
     gsap.fromTo(
       leftSpotlight.current,
       {
-        rotate: rotateStart,
+        rotate: maxRotation,
       },
       {
-        rotate: maxRotation,
+        rotate: rotateStart,
         yoyo: true,
-        duration: rotateDur,
-        repeat: -1,
+        scrollTrigger: {
+          trigger: parallaxRef.current,
+          start: "0%",
+          end: "+=100%",
+          scrub: true,
+          //   markers: true,
+        },
       },
     )
-
-    // Rotation animation for right spotlight
     gsap.fromTo(
       rightSpotlight.current,
       {
-        rotate: -rotateStart,
+        rotate: -maxRotation,
       },
       {
-        rotate: -maxRotation,
+        rotate: -rotateStart,
         yoyo: true,
-        duration: rotateDur,
-        repeat: -1,
+        scrollTrigger: {
+          trigger: parallaxRef.current,
+          start: "0%",
+          end: "+=100%",
+          scrub: true,
+          //   markers: true,
+        },
       },
     )
+    // Auto rotate
+    // gsap.fromTo(
+    //   leftSpotlight.current,
+    //   {
+    //     rotate: rotateStart,
+    //   },
+    //   {
+    //     rotate: maxRotation,
+    //     yoyo: true,
+    //     duration: rotateDur,
+    //     repeat: -1,
+    //   },
+    // )
+    // gsap.fromTo(
+    //   rightSpotlight.current,
+    //   {
+    //     rotate: -rotateStart,
+    //   },
+    //   {
+    //     rotate: -maxRotation,
+    //     yoyo: true,
+    //     duration: rotateDur,
+    //     repeat: -1,
+    //   },
+    // )
   })
 
   return (
-    <div className="absolute inset-0 top-0 h-full w-full overflow-hidden">
+    <div
+      ref={parallaxRef}
+      className="absolute inset-0 top-0 h-full w-full overflow-hidden"
+    >
       <Image
         ref={leftSpotlight}
         alt="Left Spotlight"

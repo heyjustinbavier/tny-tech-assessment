@@ -21,8 +21,6 @@ export default function Opener() {
         backgroundImage: `url("./images/background.png")`,
       }}
     >
-      {/* <div className="relative z-1 m-auto flex h-full w-full flex-col items-center justify-center text-white"> */}
-
       <div
         className={`z-1 flex max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
       >
@@ -106,7 +104,6 @@ export default function Opener() {
             "linear-gradient(#000000 0%, transparent 20%, transparent 80%, #000000)",
         }}
       ></div>
-      {/* </div> */}
     </div>
   )
 }
