@@ -1,0 +1,65 @@
+import {
+  irvin,
+  caslonItalic,
+  neutrafaceNewYorker,
+  graphik,
+} from "@/ui/fonts/fonts"
+
+import post from "@/lib/post"
+
+export default function Opener() {
+  return (
+    <div className="opener-wrapper flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-40 pb-48">
+      {/* <div className="relative z-1 m-auto flex h-full w-full flex-col items-center justify-center text-white"> */}
+      <div
+        className={`flex max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
+      >
+        {/* Rubric */}
+        <p
+          className={`${irvin.className} tracking text-[12px] leading-3 uppercase`}
+        >
+          {post.rubric}
+        </p>
+        {/* Headline */}
+        {/* Doing everything with a slice might be overkill */}
+        <h1
+          className={`${irvin.className} flex flex-col gap-y-0 text-center font-normal uppercase`}
+        >
+          <span className="text-headline-mobile md:text-headline-desktop block">
+            {post.headline.slice(0, 7)}
+          </span>
+          <span className="text-subline-mobile md:text-subline-desktop block">
+            {post.headline.slice(8, 14)}
+          </span>
+          <span className="text-headline-mobile md:text-headline-desktop block">
+            {post.headline.slice(15, 24)}
+          </span>
+          <span className="text-headline-mobile md:text-headline-desktop block">
+            {post.headline.slice(25, 31)}
+          </span>
+        </h1>
+        {/* Dek */}
+        <p
+          className={`${caslonItalic.className} text-dek-mobile md:text-dek-desktop px-4 text-center italic md:px-0`}
+        >
+          {post.dek}
+        </p>
+        <div className="flex flex-col gap-y-2.5 text-center">
+          {/* Byline */}
+          <p
+            className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop font-semibold`}
+          >
+            {post.byline}
+          </p>
+          {/* Publish Date */}
+          <p
+            className={`${graphik.className} text-date-mobile md:text-date-desktop font-medium`}
+          >
+            {post.publishDate}
+          </p>
+        </div>
+      </div>
+      {/* </div> */}
+    </div>
+  )
+}

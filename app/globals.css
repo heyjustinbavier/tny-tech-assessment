@@ -5,3 +5,59 @@ body {
   background: #000000;
   color: #ffffff;
 }
+
+@theme {
+  /* Headline */
+  --text-headline-desktop: 48px;
+  --text-headline-desktop--line-height: 58px;
+  --text-headline-desktop--letter-spacing: 1px;
+
+  --text-headline-mobile: 30px;
+  --text-headline-mobile--line-height: 36px;
+  --text-headline-mobile--letter-spacing: 1px;
+
+  /* Subheadline */
+  --text-subline-desktop: 22.51px;
+  --text-subline-desktop--line-height: 40px;
+  --text-subline-desktop--letter-spacing: 1px;
+
+  --text-subline-mobile: 20px;
+  --text-subline-mobile--line-height: 30px;
+  --text-subline-mobile--letter-spacing: 1px;
+
+  /* Dek */
+  --text-dek-desktop: 24px;
+  --text-dek-desktop--line-height: 28px;
+  --text-dek-desktop--letter-spacing: 0px;
+
+  --text-dek-mobile: 21px;
+  --text-dek-mobile--line-height: 24px;
+  --text-dek-mobile--letter-spacing: 0px;
+
+  /* Byline */
+  --text-byline-desktop: 15px;
+  --text-byline-desktop--line-height: 15px;
+  --text-byline-desktop--letter-spacing: 0.4px;
+
+  --text-byline-mobile: 14px;
+  --text-byline-mobile--line-height: 14px;
+  --text-byline-mobile--letter-spacing: 0px;
+
+  /* Publish Date */
+  --text-date-desktop: 12px;
+  --text-date-desktop--line-height: 3px;
+  --text-date-desktop--letter-spacing: 0px;
+
+  --text-date-mobile: 12px;
+  --text-date-mobile--line-height: 3px;
+  --text-date-mobile--letter-spacing: 0px;
+
+  /* Paragraph */
+  --text-paragraph-desktop: 28px;
+  --text-paragraph-desktop--line-height: 39px;
+  --text-paragraph-desktop--letter-spacing: 0px;
+
+  --text-paragraph-mobile: 21px;
+  --text-paragraph-mobile--line-height: 30px;
+  --text-paragraph-mobile--letter-spacing: 0px;
+}

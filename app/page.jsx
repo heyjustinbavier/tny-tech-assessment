@@ -1,6 +1,7 @@
 import Image from "next/image"
 
 // Import components
+import Opener from "@/components/Opener"
 import Intro from "@/components/Intro"
 
 export default function Page() {
@@ -15,6 +16,7 @@ export default function Page() {
           style={{ width: "174px", height: "auto" }}
         />
       </div>
+      <Opener />
       <Intro />
     </div>
   )

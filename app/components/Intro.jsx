@@ -1,4 +1,3 @@
-"use client"
 import { irvin, caslon } from "@/ui/fonts/fonts"
 
 import post from "@/lib/post"
@@ -19,7 +18,7 @@ export default function Intro() {
           INTRODUCTION
         </p>
         <div
-          className={`${caslon.className} flex flex-col gap-y-10 text-[21px] leading-[30px] tracking-[0px] md:text-[28px] md:leading-[39px]`}
+          className={`${caslon.className} text-paragraph-mobile md:text-paragraph-desktop flex flex-col gap-y-10`}
         >
           {renderParagraphs()}
         </div>
