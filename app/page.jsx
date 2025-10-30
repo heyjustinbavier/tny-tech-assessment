@@ -6,16 +6,15 @@ import Intro from "@/components/Intro"
 
 export default function Page() {
   return (
-    <div className="flex flex-col items-center gap-y-4 p-3">
-      <div>
-        <Image
-          src="./tny_logo.svg"
-          width={175}
-          height={39.81}
-          alt="The New Yorker Logo"
-          style={{ width: "174px", height: "auto" }}
-        />
-      </div>
+    <div className="flex flex-col items-center">
+      <Image
+        src="./images/tny_logo.svg"
+        width={175}
+        height={39.81}
+        alt="The New Yorker Logo"
+        className="absolute inset-0 mx-auto py-4"
+        style={{ width: "174px", height: "auto" }}
+      />
       <Opener />
       <Intro />
     </div>

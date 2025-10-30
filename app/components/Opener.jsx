@@ -1,3 +1,4 @@
+import Image from "next/image"
 import {
   irvin,
   caslonItalic,
@@ -7,12 +8,22 @@ import {
 
 import post from "@/lib/post"
 
+import ShareIcon from "@/components/ShareIcon"
+import Stars from "@/components/Stars"
+import Spotlights from "./Spotlights"
+
 export default function Opener() {
   return (
-    <div className="opener-wrapper flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-40 pb-48">
+    <div
+      className="opener-wrapper mb-2 flex w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-28 pb-48 md:pt-40"
+      style={{
+        backgroundImage: `url("./images/background.png")`,
+      }}
+    >
       {/* <div className="relative z-1 m-auto flex h-full w-full flex-col items-center justify-center text-white"> */}
+
       <div
-        className={`flex max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
+        className={`z-1 flex max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
       >
         {/* Rubric */}
         <p
@@ -58,7 +69,40 @@ export default function Opener() {
             {post.publishDate}
           </p>
         </div>
+        {/* Social Icons */}
+        <div className="bg-red-504 flex items-center justify-center">
+          <ShareIcon
+            width={10}
+            height={18}
+            imgSrc={"./images/icons/facebook.svg"}
+            altText="Facebook Icon"
+            shareLink="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewyorker.com"
+          />
+          <ShareIcon
+            width={19}
+            height={15}
+            imgSrc="./images/icons/twitter.svg"
+            altText="Twitter Icon"
+            shareLink="https://twitter.com/intent/tweet?url=https%3A%2F%2Fnewyorker.com&text=The%20Art%20of%20the%20Hollywood%20Memoir"
+          />
+          <ShareIcon
+            width={19}
+            height={15}
+            imgSrc="./images/icons/mail.svg"
+            altText="Email Icon"
+            shareLink="mailto:?subject=The%20Art%20of%20the%20Hollywood%20Memoir&amp;body=Read%20the%20full%20story%20on%20http://newyorker.com."
+          />
+        </div>
       </div>
+      <Spotlights />
+      <Stars />
+      {/* Gradient Overlay for page transition */}
+      <div
+        className="absolute inset-0 h-full w-full"
+        style={{
+          background: "linear-gradient(transparent, #000000)",
+        }}
+      ></div>
       {/* </div> */}
     </div>
   )
