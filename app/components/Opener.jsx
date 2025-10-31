@@ -1,4 +1,3 @@
-import Image from "next/image"
 import {
   irvin,
   irvinHeading,
@@ -95,16 +94,16 @@ export default function Opener() {
         </div>
       </div>
       <Spotlights />
-      <Clouds />
       <Stars />
       {/* Gradient Overlay for page transition */}
       <div
-        className="absolute inset-0 h-full w-full"
+        className="absolute inset-0 h-full w-full md:inset-px"
         style={{
           background:
             "linear-gradient(#000000 0%, transparent 20%, transparent 80%, #000000)",
         }}
       ></div>
+      <Clouds />
     </div>
   )
 }

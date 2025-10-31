@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-// Import components
 import Opener from "@/components/Opener"
 import Intro from "@/components/Intro"
 

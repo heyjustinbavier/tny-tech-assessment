@@ -8,6 +8,7 @@ export default function Stars() {
   const animationRef = useRef(null)
   const starsImageRef = useRef(null)
   const noiseMapRef = useRef(null)
+  const tweensRef = useRef([])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -15,20 +16,20 @@ export default function Stars() {
 
     // Loader function for individual images
     const loadImage = async (src) => {
-      const res = await fetch(src) // fetch uses same-origin
+      const res = await fetch(src)
       const blob = await res.blob()
       return new Promise((resolve, reject) => {
         const img = new Image()
         img.onload = () => resolve(img)
         img.onerror = reject
-        img.src = URL.createObjectURL(blob) // now same-origin for canvas
+        img.src = URL.createObjectURL(blob)
       })
     }
 
     // Draw images onto canvas, create mask, and animate the mask
     const loadAllImages = async () => {
       try {
-        // Wait for the stars and noisemap images to laod
+        // Wait for the stars and noisemap images to load
         const [starsImage, noiseMap] = await Promise.all([
           loadImage("/images/animation/stars.png"),
           loadImage("/images/animation/noisemap.png"),
@@ -89,10 +90,17 @@ export default function Stars() {
 
         setCanvasSize()
 
-        window.addEventListener("resize", setCanvasSize)
+        let lastWidth = window.innerWidth
+        const handleResize = () => {
+          if (window.innerWidth !== lastWidth) {
+            lastWidth = window.innerWidth
+            setCanvasSize()
+          }
+        }
+        window.addEventListener("resize", handleResize)
 
         // Animate the offset for the noise map
-        gsap.to(offset, {
+        const offsetTween = gsap.to(offset, {
           x: noiseMap.width,
           y: -noiseMap.height,
           duration: 40,
@@ -104,11 +112,12 @@ export default function Stars() {
             if (offset.y <= -noiseMap.height) offset.y = 0
           },
         })
+        tweensRef.current.push(offsetTween)
         // Draw stars
         animate()
 
         return () => {
-          window.removeEventListener("resize", setCanvasSize)
+          window.removeEventListener("resize", handleResize)
         }
       } catch (error) {
         console.error("Error loading images:", error)
@@ -118,15 +127,23 @@ export default function Stars() {
     loadAllImages()
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
+      // Clean up resize event listner
+      window.removeEventListener("resize", handleResize)
+
+      // Clean up animation
+      if (animationRef.current) cancelAnimationFrame(animationRef.current)
+      tweensRef.current.forEach((t) => t && t.kill && t.kill())
+      tweensRef.current = []
+
+      // Clean up canvas images
+      if (starsImageRef.current) URL.revokeObjectURL(starsImageRef.current.src)
+      if (noiseMapRef.current) URL.revokeObjectURL(noiseMapRef.current.src)
     }
   }, [])
 
   return (
     <div className="absolute inset-0 top-0 h-full w-full overflow-hidden">
-      <canvas ref={canvasRef} className="h-full w-full" />
+      <canvas ref={canvasRef} className="block h-full w-full" />
     </div>
   )
 }

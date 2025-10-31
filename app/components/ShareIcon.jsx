@@ -1,4 +1,5 @@
 "use client"
+
 import Image from "next/image"
 
 export default function ShareIcon({
@@ -17,7 +18,7 @@ export default function ShareIcon({
       width={width}
       height={height}
       alt={altText}
-      className="w-full px-4 hover:cursor-pointer"
+      className="w-full scale-80 px-3 hover:cursor-pointer md:scale-100 md:px-4"
     />
   )
 }

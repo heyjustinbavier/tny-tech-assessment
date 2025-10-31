@@ -1,4 +1,5 @@
 "use client"
+
 import { useRef, useEffect, useState } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -11,10 +12,9 @@ export default function Spotlights() {
   const leftSpotlight = useRef(null)
   const rightSpotlight = useRef(null)
   const [rotateStart, setRotateStart] = useState(-10)
-  const [rotateDur, setRotateDur] = useState(3)
-  const [horizontalOffset, setHorizontalOffset] = useState(30)
-  const [verticalOffset, setVerticalOffset] = useState(18)
-  const [maxRotation, setMaxRotation] = useState(55)
+  const [horizontalOffset, setHorizontalOffset] = useState(40)
+  const [verticalOffset, setVerticalOffset] = useState(36)
+  const [maxRotation, setMaxRotation] = useState(50)
 
   useEffect(() => {
     const setRotationSettings = () => {
@@ -38,17 +38,24 @@ export default function Spotlights() {
         setHorizontalOffset(42)
         setVerticalOffset(30)
         setMaxRotation(47)
+      } else if (window.innerWidth >= 500 && window.innerWidth < 768) {
+        // Mobile - Tablet Inbetween
+        setHorizontalOffset(42)
+        setVerticalOffset(30)
+        setMaxRotation(40)
       } else {
         // Mobile
-        setHorizontalOffset(35)
-        setVerticalOffset(42)
-        setMaxRotation(22)
+        setHorizontalOffset(75)
+        setVerticalOffset(45)
+        setMaxRotation(35)
       }
     }
-    window.addEventListener("resize", setRotationSettings)
     setRotationSettings()
-    // Scroll based rotate
-    gsap.fromTo(
+    window.addEventListener("resize", setRotationSettings)
+
+    const tweens = []
+    // Scroll Based Rotation Block
+    const leftTween = gsap.fromTo(
       leftSpotlight.current,
       {
         rotate: maxRotation,
@@ -61,11 +68,11 @@ export default function Spotlights() {
           start: "0%",
           end: "+=100%",
           scrub: true,
-          //   markers: true,
         },
       },
     )
-    gsap.fromTo(
+    tweens.push(leftTween)
+    const rightTween = gsap.fromTo(
       rightSpotlight.current,
       {
         rotate: -maxRotation,
@@ -78,12 +85,15 @@ export default function Spotlights() {
           start: "0%",
           end: "+=100%",
           scrub: true,
-          //   markers: true,
         },
       },
     )
-    // Auto rotate
-    // gsap.fromTo(
+    tweens.push(rightTween)
+    // End Scroll Based Rotation Block
+
+    // Automatic Looping Rotation Block
+    // Leaving this in here for now in case feedback requests for the spotlights to be animated on a loop independent of scroll
+    // const leftTween = gsap.fromTo(
     //   leftSpotlight.current,
     //   {
     //     rotate: rotateStart,
@@ -95,7 +105,8 @@ export default function Spotlights() {
     //     repeat: -1,
     //   },
     // )
-    // gsap.fromTo(
+    // tweens.push(leftTween)
+    // const rightTween = gsap.fromTo(
     //   rightSpotlight.current,
     //   {
     //     rotate: -rotateStart,
@@ -107,6 +118,14 @@ export default function Spotlights() {
     //     repeat: -1,
     //   },
     // )
+    // tweens.push(rightTween)
+    // End Automatic Looping Rotation Block
+
+    return () => {
+      window.removeEventListener("resize", setRotationSettings)
+      // Clean up tweens
+      tweens.forEach((t) => t && t.kill && t.kill())
+    }
   }, [maxRotation])
 
   return (
@@ -117,13 +136,13 @@ export default function Spotlights() {
       <Image
         ref={leftSpotlight}
         alt="Left Spotlight"
-        src="./images/animation/light.webp"
+        className="absolute origin-bottom"
         style={{
           left: "-" + horizontalOffset + "%",
           bottom: "-" + verticalOffset + "%",
           transform: `rotate(${maxRotation}deg)`,
         }}
-        className="absolute origin-bottom"
+        src="./images/animation/light.webp"
         width={277}
         height={2000}
       />
