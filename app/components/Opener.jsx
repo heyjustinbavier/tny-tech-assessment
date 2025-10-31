@@ -31,7 +31,6 @@ export default function Opener() {
           {post.rubric}
         </p>
         {/* Headline */}
-        {/* Doing everything with a slice might be overkill */}
         <h1
           className={`${irvinHeading.className} flex flex-col gap-y-0 text-center font-normal uppercase`}
         >
