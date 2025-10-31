@@ -41,7 +41,6 @@ export default function Clouds() {
       gsap.to(cloud, {
         yPercent: 45 - index,
         xPercent: index % 2 === 0 ? 5 : -5,
-        // scale: 1.1,
         scrollTrigger: {
           trigger: parallaxRef.current,
           start: "top top",
