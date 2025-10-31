@@ -1,6 +1,7 @@
 import Image from "next/image"
 import {
   irvin,
+  irvinHeading,
   caslonItalic,
   neutrafaceNewYorker,
   graphik,
@@ -16,7 +17,7 @@ import Stars from "@/components/Stars"
 export default function Opener() {
   return (
     <div
-      className="opener-wrapper relative mb-34 flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 md:mb-48 md:pt-40"
+      className="opener-wrapper relative mb-34 flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 md:mb-48 md:min-h-screen md:pt-0"
       style={{
         backgroundImage: `url("./images/background.png")`,
       }}
@@ -33,7 +34,7 @@ export default function Opener() {
         {/* Headline */}
         {/* Doing everything with a slice might be overkill */}
         <h1
-          className={`${irvin.className} flex flex-col gap-y-0 text-center font-normal uppercase`}
+          className={`${irvinHeading.className} flex flex-col gap-y-0 text-center font-normal uppercase`}
         >
           <span className="text-headline-mobile md:text-headline-desktop block">
             {post.headline.slice(0, 7)}
