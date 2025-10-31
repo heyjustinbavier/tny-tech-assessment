@@ -15,6 +15,11 @@ export default function Clouds() {
   const [offsetIndex, setOffsetIndex] = useState(0)
 
   useEffect(() => {
+    // Calculate device size to determine which clouds to show / hide
+    // Offset index used to toggle absolute positioning values set in cloudDictionary.js
+    // 0: Desktop positioning
+    // 1: Tablet positioning
+    // 2: Mobile positioning
     const getSize = () => {
       if (window.innerWidth >= 1024) {
         setDevice("desktop")
@@ -38,6 +43,9 @@ export default function Clouds() {
   useEffect(() => {
     const clouds = gsap.utils.toArray(".cloud-wrapper")
     const tweens = clouds.map((cloud, index) => {
+      // Parallax animation
+      // yPercent controls the vertical speed
+      // xPercent controls the horizontal movement. Left / right movement determined by index of cloud.
       gsap.to(cloud, {
         yPercent: 45 - index,
         xPercent: index % 2 === 0 ? 5 : -5,

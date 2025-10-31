@@ -14,6 +14,7 @@ export default function SmoothScrollProvider({ children }) {
       wheelMultiplier: 1,
       touchMultiplier: 1,
     })
+    // Sync lenis to gsap ScrollTrigger
     lenis.on("scroll", ScrollTrigger.update)
     gsap.ticker.add((time) => {
       lenis.raf(time * 1000)

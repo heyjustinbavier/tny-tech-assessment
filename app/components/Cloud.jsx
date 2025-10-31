@@ -43,6 +43,7 @@ export default function Cloud({
       }
     }
   }, [offsetIndex, desktopEnabled, mobileEnabled])
+
   return (
     <Image
       ref={cloudRef}

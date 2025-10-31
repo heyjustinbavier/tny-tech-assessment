@@ -1,3 +1,6 @@
+// Offset array is used for responsive positioning
+// First object is desktop positioning, second is tablet, third is mobile
+// Animation offset is used to delay the entrance fade animation
 const cloudDictionary = [
   {
     imgSrc: "cloud_01.webp",

@@ -6,6 +6,7 @@ import Intro from "@/components/Intro"
 export default function Page() {
   return (
     <div className="flex flex-col items-center">
+      {/* Site logo */}
       <Image
         src="./images/tny_logo.svg"
         width={175}

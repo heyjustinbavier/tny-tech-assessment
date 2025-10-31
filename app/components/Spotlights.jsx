@@ -18,6 +18,7 @@ export default function Spotlights() {
   const [verticalOffset, setVerticalOffset] = useState(36)
   const [maxRotation, setMaxRotation] = useState(50)
 
+  // Adjust spotlight positioning and rotation values based on device size
   useEffect(() => {
     const setRotationSettings = () => {
       if (window.innerWidth >= 1440) {
