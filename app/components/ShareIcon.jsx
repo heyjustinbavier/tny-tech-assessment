@@ -18,7 +18,7 @@ export default function ShareIcon({
       width={width}
       height={height}
       alt={altText}
-      className="w-full scale-80 px-3 hover:cursor-pointer md:scale-100 md:px-4"
+      className="w-full scale-70 px-3 pt-4 hover:cursor-pointer md:scale-100 md:px-4"
     />
   )
 }

@@ -39,9 +39,9 @@ export default function Clouds() {
     const clouds = gsap.utils.toArray(".cloud-wrapper")
     const tweens = clouds.map((cloud, index) => {
       gsap.to(cloud, {
-        yPercent: -15 - index,
-        xPercent: index % 2 === 0 ? -5 : 5,
-        scale: 1.1,
+        yPercent: 45 - index,
+        xPercent: index % 2 === 0 ? 5 : -5,
+        // scale: 1.1,
         scrollTrigger: {
           trigger: parallaxRef.current,
           start: "top top",

@@ -54,7 +54,7 @@ export default function Opener() {
         >
           {post.dek}
         </p>
-        <div className="flex flex-col gap-y-2.5 text-center">
+        <div className="flex flex-col gap-y-4 text-center">
           {/* Byline */}
           <p
             className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop`}

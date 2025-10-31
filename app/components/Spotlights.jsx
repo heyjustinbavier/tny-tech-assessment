@@ -12,6 +12,8 @@ export default function Spotlights() {
   const leftSpotlight = useRef(null)
   const rightSpotlight = useRef(null)
   const [rotateStart, setRotateStart] = useState(-10)
+  // Enable this if you want the automatic animation for spotlights
+  // const [rotateDur, setRotateDur] = useState(3)
   const [horizontalOffset, setHorizontalOffset] = useState(40)
   const [verticalOffset, setVerticalOffset] = useState(36)
   const [maxRotation, setMaxRotation] = useState(50)
