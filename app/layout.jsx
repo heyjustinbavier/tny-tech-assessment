@@ -15,6 +15,7 @@ export default function RootLayout({ children }) {
         name="viewport"
         content="width=device-width,initial-scale=1, viewport-fit=cover"
       />
+      <title>The Art of the Hollywood Memoir</title>
       <body>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
       </body>
