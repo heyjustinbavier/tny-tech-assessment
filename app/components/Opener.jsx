@@ -58,7 +58,7 @@ export default function Opener() {
         <div className="flex flex-col gap-y-2.5 text-center">
           {/* Byline */}
           <p
-            className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop font-semibold`}
+            className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop`}
           >
             {post.byline}
           </p>
