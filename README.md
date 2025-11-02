@@ -10,3 +10,5 @@ Running the development server:
 Building the project:
 1. To build static files to /dist: npm run build
 2. To run the build on your machine: npx serve dist -l 3000 (this may require you to install the serve package globally) 
+
+Note: Some commits were made from my secondary Github account due to work done on my laptop vs home PC, but all work was done solely by me.
