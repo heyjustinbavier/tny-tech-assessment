@@ -25,11 +25,12 @@ export default function Opener() {
         className={`z-1 flex h-full max-w-xs flex-col items-center justify-between gap-y-8 border border-white px-8 pt-13 pb-12 text-white md:max-w-md md:px-12`}
       >
         {/* Rubric */}
-        <p
-          className={`${irvin.className} tracking text-[12px] leading-3 uppercase`}
+        <a
+          href="https://www.newyorker.com/books/page-turner"
+          className={`${irvin.className} tracking text-[12px] leading-3 uppercase hover:underline`}
         >
           {post.rubric}
-        </p>
+        </a>
         {/* Headline */}
         <h1
           className={`${irvinHeading.className} flex flex-col gap-y-0 text-center font-normal uppercase`}
@@ -55,16 +56,17 @@ export default function Opener() {
         </p>
         <div className="flex flex-col gap-y-4 text-center">
           {/* Byline */}
-          <p
-            className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop`}
+          <a
+            href="https://www.newyorker.com/contributors/rachel-syme"
+            className={`${neutrafaceNewYorker.className} text-byline-mobile md:text-byline-desktop hover:underline`}
           >
             {post.byline}
-          </p>
+          </a>
           {/* Publish Date */}
           <p
             className={`${graphik.className} text-date-mobile md:text-date-desktop font-medium`}
           >
-            {post.publishDate}
+            <time>{post.publishDate}</time>
           </p>
         </div>
         {/* Social Icons */}
