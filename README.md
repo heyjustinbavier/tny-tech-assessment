@@ -1,7 +1,7 @@
 Take home tech assessment for The New Yorker.
 
 Downloading the project:
-1. Clone repository, change into the directory: cd tny-tech-asseessment
+1. Clone repository, change into the directory: cd tny-tech-assessment
 2. Install dependencies: npm install
 
 Running the development server:
