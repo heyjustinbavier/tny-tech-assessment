@@ -14,9 +14,6 @@ export default function ShareIcon({
     <a href={shareLink} aria-label={shareLabel}>
       <Image
         src={imgSrc}
-        onClick={() => {
-          window.open(shareLink, "_blank")
-        }}
         width={width}
         height={height}
         alt={altText}
