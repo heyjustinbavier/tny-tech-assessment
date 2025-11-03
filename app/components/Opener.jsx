@@ -15,7 +15,7 @@ import Stars from "@/components/Stars"
 
 export default function Opener() {
   return (
-    <div
+    <header
       className="opener-wrapper relative mb-34 flex h-full w-full items-center justify-center bg-cover bg-center bg-no-repeat pt-38 md:mb-48 md:min-h-screen md:pt-0"
       style={{
         backgroundImage: `url("./images/background.png")`,
@@ -49,11 +49,11 @@ export default function Opener() {
           </span>
         </h1>
         {/* Dek */}
-        <p
+        <h2
           className={`${caslonItalic.className} text-dek-mobile md:text-dek-desktop px-4 text-center italic md:px-0`}
         >
           {post.dek}
-        </p>
+        </h2>
         <div className="flex flex-col gap-y-4 text-center">
           {/* Byline */}
           <a
@@ -77,6 +77,7 @@ export default function Opener() {
             imgSrc={"./images/icons/facebook.svg"}
             altText="Facebook Icon"
             shareLink="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fnewyorker.com"
+            shareLabel="Share on Facebook"
           />
           <ShareIcon
             width={19}
@@ -84,6 +85,7 @@ export default function Opener() {
             imgSrc="./images/icons/twitter.svg"
             altText="Twitter Icon"
             shareLink="https://twitter.com/intent/tweet?url=https%3A%2F%2Fnewyorker.com&text=The%20Art%20of%20the%20Hollywood%20Memoir"
+            shareLabel="Share on Twitter"
           />
           <ShareIcon
             width={19}
@@ -91,6 +93,7 @@ export default function Opener() {
             imgSrc="./images/icons/mail.svg"
             altText="Email Icon"
             shareLink="mailto:?subject=The%20Art%20of%20the%20Hollywood%20Memoir&amp;body=Read%20the%20full%20story%20on%20http://newyorker.com."
+            shareLabel="Share via Email"
           />
         </div>
       </div>
@@ -105,6 +108,6 @@ export default function Opener() {
         }}
       ></div>
       <Clouds />
-    </div>
+    </header>
   )
 }

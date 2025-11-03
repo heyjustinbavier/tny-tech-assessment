@@ -27,6 +27,7 @@ export default function Stars() {
     }
 
     // Draw images onto canvas, create mask, and animate the mask
+    let handleResize = null
     const loadAllImages = async () => {
       try {
         // Wait for the stars and noisemap images to load
@@ -91,7 +92,7 @@ export default function Stars() {
         setCanvasSize()
 
         let lastWidth = window.innerWidth
-        const handleResize = () => {
+        handleResize = () => {
           if (window.innerWidth !== lastWidth) {
             lastWidth = window.innerWidth
             setCanvasSize()
@@ -115,10 +116,6 @@ export default function Stars() {
         tweensRef.current.push(offsetTween)
         // Draw stars
         animate()
-
-        return () => {
-          window.removeEventListener("resize", handleResize)
-        }
       } catch (error) {
         console.error("Error loading images:", error)
       }
@@ -128,7 +125,7 @@ export default function Stars() {
 
     return () => {
       // Clean up resize event listner
-      window.removeEventListener("resize", handleResize)
+      if (handleResize) window.removeEventListener("resize", handleResize)
 
       // Clean up animation
       if (animationRef.current) cancelAnimationFrame(animationRef.current)

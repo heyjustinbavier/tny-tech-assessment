@@ -46,7 +46,7 @@ export default function Clouds() {
       // Parallax animation
       // yPercent controls the vertical speed
       // xPercent controls the horizontal movement. Left / right movement determined by index of cloud.
-      gsap.to(cloud, {
+      return gsap.to(cloud, {
         yPercent: 45 - index,
         xPercent: index % 2 === 0 ? 5 : -5,
         scrollTrigger: {
@@ -61,6 +61,7 @@ export default function Clouds() {
 
     return () => {
       // Clean up tweens
+      console.log("Clean")
       tweens.forEach((t) => t && t.kill && t.kill())
     }
   }, [])

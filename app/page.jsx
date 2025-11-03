@@ -13,12 +13,15 @@ export default function Page() {
           width={175}
           height={39.81}
           alt="The New Yorker Logo"
+          loading="eager"
           className="absolute inset-0 z-1 mx-auto w-[120px] py-4 md:w-[174px]"
           style={{ width: "174px", height: "auto" }}
         />
       </a>
-      <Opener />
-      <Intro />
+      <article className="w-full">
+        <Opener />
+        <Intro />
+      </article>
     </div>
   )
 }
